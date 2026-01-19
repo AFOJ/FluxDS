@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "figma-tokens:extract": "node ./scripts/extract-figma-tokens.js"
   },
   "dependencies": {
     "preact": "^10.27.2"
