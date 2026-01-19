@@ -12,6 +12,7 @@
     "figma-tokens:extract": "node ./scripts/extract-figma-tokens.js"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "preact": "^10.27.2"
   },
   "devDependencies": {
