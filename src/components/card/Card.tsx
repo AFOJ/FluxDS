@@ -81,8 +81,7 @@ function CardGraphic() {
         />
         <path
           d="M1.13379 1.55957L41.9478 42.4123M82.7618 83.6961L41.9478 42.4123M41.9478 42.4123H1.13379L41.9478 83.6961V42.4123Z"
-          class="stroke-[var(--border-colour-primary)]"
-          stroke-width="1.5"
+          class="stroke-[var(--border-colour-primary)] [stroke-width:1.5]"
         />
       </g>
       <path
