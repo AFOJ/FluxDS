@@ -1,0 +1,145 @@
+import type { Meta, StoryObj } from '@storybook/preact'
+import { Input } from './Input'
+
+const meta: Meta<typeof Input> = {
+  title: 'Components/Input',
+  component: Input,
+  tags: ['autodocs'],
+  argTypes: {
+    label: {
+      control: 'text',
+      description: 'The label for the input field',
+    },
+
+    error: {
+      control: 'boolean',
+      description:
+        'Whether the input field is in an error state. Takes precedence over success state',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+
+    success: {
+      control: 'boolean',
+      description:
+        'Whether the input field is in a success state. Takes precedence over clearable button',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+
+    clearable: {
+      control: 'boolean',
+      description:
+        'Whether the input field should have button to clear its content.',
+    },
+
+    required: {
+      control: 'boolean',
+      description: 'Whether the input field is required.',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+
+    type: {
+      control: 'select',
+      options: ['text', 'email'],
+      description: 'The type of the input field',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'text' },
+      },
+    },
+
+    fill: {
+      control: 'boolean',
+      description:
+        'Whether the input should take the full width of its container',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Flag to disable the input field',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+  },
+
+  decorators: [
+    (Story, context) => {
+      const theme = context.globals.theme || 'BrandA'
+      return (
+        <div
+          data-theme={theme}
+          style={{
+            padding: '3rem',
+            background: 'var(--surface-colour-secondary)',
+          }}
+        >
+          <Story />
+        </div>
+      )
+    },
+  ],
+}
+
+export default meta
+type Story = StoryObj<typeof Input>
+
+export const Default: Story = {
+  args: {
+    id: 'default-input',
+    label: 'Default',
+    required: true,
+  },
+}
+
+export const Filled: Story = {
+  args: {
+    id: 'filled-input',
+    label: 'Filled Input',
+    value: 'Filled',
+    required: true,
+    clearable: true,
+  },
+}
+
+export const Error: Story = {
+  args: {
+    id: 'error-input',
+    label: 'Error Input',
+    value: 'Error',
+    required: true,
+    error: true,
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    id: 'disabled-input',
+    label: 'Disabled Input',
+    value: 'Disabled',
+    disabled: true,
+    clearable: true,
+  },
+}
+
+export const Success: Story = {
+  args: {
+    id: 'success-input',
+    label: 'Success Input',
+    value: 'Success',
+    success: true,
+    clearable: true,
+  },
+}
