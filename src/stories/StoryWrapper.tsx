@@ -11,7 +11,7 @@ export function StoryWrapper(props: Readonly<StoryWrapperProps>) {
   return (
     <div
       data-theme={theme ?? 'BrandA'}
-      style={{ padding: '3rem', minHeight: '100vh', background: 'blue' }}
+      style={{ padding: '3rem', minHeight: '100vh', background: 'var(--surface-colour-page)' }}
       {...rest}
     >
       {children}
