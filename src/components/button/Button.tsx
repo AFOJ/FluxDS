@@ -51,7 +51,7 @@ export function Button(props: Readonly<ButtonProps>) {
       {...rest}
     >
       {leftIconElement && <span aria-hidden="true">{leftIconElement}</span>}
-      <span>{text}</span>
+      <span class={"text-left"}>{text}</span>
 
       {rightIconElement && <span aria-hidden="true">{rightIconElement}</span>}
     </button>
