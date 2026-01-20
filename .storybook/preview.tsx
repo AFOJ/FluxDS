@@ -5,7 +5,7 @@ import '../src/global.css'
 const preview: Preview = {
   globalTypes: {
     theme: {
-      description: 'Global Brand THeme',
+      description: 'Global Brand Theme',
       defaultValue: 'BrandA',
       toolbar: {
         title: 'Theme',

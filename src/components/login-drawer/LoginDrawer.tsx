@@ -56,15 +56,19 @@ export function LoginDrawer(props: Readonly<LoginDrawerProps>) {
       container.querySelector<HTMLElement>(focusableSelectors)
     initialFocus?.focus()
 
-    window.addEventListener('keydown', handleKeyDown)
+    container.addEventListener('keydown', handleKeyDown)
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown)
+      container.removeEventListener('keydown', handleKeyDown)
     }
   }, [isOpen])
 
+  if (!isOpen) {
+    return null
+  }
+
   return (
-    <div
+    <section
       ref={drawerRef}
       role="dialog"
       aria-modal="true"
@@ -77,7 +81,7 @@ export function LoginDrawer(props: Readonly<LoginDrawerProps>) {
     >
       <div class={'w-full flex justify-end'}>
         <IconButton
-          ariaLabel="Close Button"
+          ariaLabel="Close Drawer"
           icon="close"
           onClick={onClose}
           class={clsx({ 'cursor-pointer': Boolean(onClose) })}
@@ -130,6 +134,6 @@ export function LoginDrawer(props: Readonly<LoginDrawerProps>) {
         icon="user"
         fill
       />
-    </div>
+    </section>
   )
 }
