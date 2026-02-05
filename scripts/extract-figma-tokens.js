@@ -40,9 +40,6 @@ function resolveTokenValue(tokenValue, brandContext) {
     figmaTokens[`Mapped/${brandContext}`], // Unfortunately needed for just {Surface.Colour.Accent} :(
     figmaTokens[`Alias colours/${brandContext}`],
     figmaTokens['Primitives/Default'],
-    figmaTokens['Primitives/Default']?.Colour,
-    figmaTokens['Primitives/Default']?.Scale,
-    figmaTokens['Primitives/Default']?.Font?.Brand?.[brandContext],
   ]
 
   for (const root of searchRoots) {
@@ -74,14 +71,13 @@ function resolveTokenValue(tokenValue, brandContext) {
  * @param {string[]} cssLines - The array to which generated CSS lines are appended.
  */
 function processTokenCategory(categoryObj, prefix, brand, cssLines) {
-  for (const tokenName in categoryObj) {
+  for (const [tokenName, token] of Object.entries(categoryObj)) {
     if (tokenName.includes('↘︎')) {
       continue
     }
 
     // Build the CSS custom property name (e.g., --surface-colour)
     const cssPropertyName = `${prefix}-${tokenName.toLowerCase().replace(/\s+/g, '-')}`
-    const token = categoryObj[tokenName]
 
     const isLeafToken = token.value !== undefined
 
@@ -116,8 +112,41 @@ function processTokenCategory(categoryObj, prefix, brand, cssLines) {
       resolvedValue = `${resolvedValue}px`
     }
 
-    cssLines.push(`    ${cssPropertyName}: ${resolvedValue};`)
+    const INDENTATION = '    '
+    cssLines.push(`${INDENTATION}${cssPropertyName}: ${resolvedValue};`)
   }
+}
+
+function getBrandCategories(brand) {
+  return Object.keys(figmaTokens[`Mapped/${brand}`])
+}
+
+function generateResponsiveTokensCSS() {
+  const BRAND = 'NOT-IMPORTANT'
+  let cssContent = '/* Responsive Tokens */\n:root {\n'
+  const cssLines = []
+
+  if (figmaTokens['Responsive/Desktop']) {
+    processTokenCategory(
+      figmaTokens['Responsive/Desktop'],
+      '--res-desktop',
+      BRAND,
+      cssLines,
+    )
+  }
+
+  if (figmaTokens['Responsive/Mobile']) {
+    processTokenCategory(
+      figmaTokens['Responsive/Mobile'],
+      '--res-mobile',
+      BRAND,
+      cssLines,
+    )
+  }
+
+  cssContent += cssLines.join('\n')
+  cssContent += `\n}`
+  return cssContent
 }
 
 /**
@@ -125,7 +154,7 @@ function processTokenCategory(categoryObj, prefix, brand, cssLines) {
  */
 function generateBrandCSS(brand) {
   const cssLines = []
-  const categories = ['Surface', 'Text', 'Icon', 'Border', 'Font']
+  const categories = getBrandCategories(brand)
 
   // Process each design token category
   categories.forEach((category) => {
@@ -140,28 +169,17 @@ function generateBrandCSS(brand) {
     }
   })
 
-  if (figmaTokens['Responsive/Desktop']) {
-    processTokenCategory(
-      figmaTokens['Responsive/Desktop'],
-      '--res-desktop',
-      brand,
-      cssLines,
-    )
-  }
-
-  if (figmaTokens['Responsive/Mobile']) {
-    processTokenCategory(
-      figmaTokens['Responsive/Mobile'],
-      '--res-mobile',
-      brand,
-      cssLines,
-    )
-  }
-
   return cssLines.join('\n')
 }
 
-const brands = ['BrandA', 'BrandB']
+function getBrandKeys() {
+  const searchKey = 'Mapped/'
+  return figmaTokens['$metadata']?.['tokenSetOrder']
+    .filter((key) => key.startsWith(searchKey))
+    .map((key) => key.replace(searchKey, ''))
+}
+
+const brands = getBrandKeys()
 const GLOBAL_CSS_PATH = 'src/global.css'
 let cssContent = `/* To use, copy the content of this into ${GLOBAL_CSS_PATH} */\n\n`
 
@@ -176,8 +194,10 @@ brands.forEach((brand, index) => {
 
   cssContent += `${selector} {\n`
   cssContent += generateBrandCSS(brand)
-  cssContent += '\n}\n\n'
+  cssContent += '\n}\n'
 })
+
+cssContent += `\n${generateResponsiveTokensCSS()}\n`
 
 fs.writeFileSync('./scripts/tokens.css', cssContent)
 console.log('Tokens extracted to scripts/tokens.css')
