@@ -98,8 +98,8 @@ export function Input(props: Readonly<InputFieldProps>) {
           class={clsx(
             'absolute  transition-all duration-200 pointer-events-none',
             isFloating
-              ? '-top-2 left-2 text-[10px] font-medium px-1'
-              : 'top-1/2 left-2 -translate-y-1/2 text-sm',
+              ? '-top-2 left-3 text-[10px] font-medium px-1'
+              : 'top-1/2 left-3 -translate-y-1/2 text-sm',
             labelStyles[state],
             {
               // Below is purely for the background handling.

@@ -164,15 +164,17 @@ export function Dropdown(props: Readonly<DropdownProps>) {
             {label}
           </label>
 
-          <span
-            aria-hidden="true"
-            class={clsx({
-              'text-[var(--text-colour-disabled)]': disabled,
-              'text-[var(--text-colour-action-active)]': !disabled,
-            })}
-          >
-            {leftIconElement}
-          </span>
+          {leftIconElement && (
+            <span
+              aria-hidden="true"
+              class={clsx({
+                'text-[var(--text-colour-disabled)]': disabled,
+                'text-[var(--text-colour-action-active)]': !disabled,
+              })}
+            >
+              {leftIconElement}
+            </span>
+          )}
 
           <span
             class={clsx(
