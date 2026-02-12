@@ -1,15 +1,15 @@
 {
-  "name": "biglight-fe-test",
+  "name": "fluxds",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:design-tokens": "node ./scripts/extract-figma-tokens.js",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build",
-    "figma-tokens:extract": "node ./scripts/extract-figma-tokens.js"
+    "storybook:build": "storybook build"
   },
   "dependencies": {
     "clsx": "^2.1.1",
