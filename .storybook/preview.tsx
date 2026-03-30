@@ -10,7 +10,7 @@ const preview: Preview = {
       toolbar: {
         title: 'Theme',
         icon: 'paintbrush',
-        items: ['Booker', 'BrandB'],
+        items: ['Booker', 'Venus'],
         dynamicTitle: true,
       },
     },

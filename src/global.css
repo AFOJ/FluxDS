@@ -117,7 +117,7 @@
   --font-font-weight-paragraph-bold: 700;
   --font-font-weight-paragraph-extra-bold: 800;
 }
-[data-theme='BrandB'] {
+[data-theme='venus'] {
   --surface-colour-page: #f5f5f5;
   --surface-colour-positive-light: #e6f9e6;
   --surface-colour-disabled-dark: #ebeae8;
@@ -156,7 +156,7 @@
   --surface-colour-tag-light: #ffffff;
   --surface-colour-tag-dark: #fc4c02;
   --surface-colour-brand-secondary: #901438;
-  --surface-brand-logo: BrandB;
+  --surface-brand-logo: venus;
   --text-colour-headings: #000000;
   --text-colour-body: #000000;
   --text-colour-success: #5fda5f;

@@ -47,8 +47,8 @@ The token to css script is designed to be selective about which data it processe
       "global",
       "Primitives/Default",
       "Alias colours/booker",
-      "Alias colours/BrandB",
-      "Mapped/BrandB",
+      "Alias colours/venus",
+      "Mapped/venus",
       "Responsive/Desktop",
       "Responsive/Mobile"
     ]
@@ -103,8 +103,8 @@ To apply a theme to an area, add the `data-theme={your-target-theme}` attribute 
 <div data-theme="booker">
   <Button>Scoped to the theme "Booker"</Button>
 
-  <div data-theme="BrandB">
-    <Button>Scoped to Brand B</Button>
+  <div data-theme="venus">
+    <Button>Scoped to the theme "Venus"</Button>
   </div>
 </div>
 ```

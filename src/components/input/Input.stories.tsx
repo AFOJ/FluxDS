@@ -76,19 +76,8 @@ const meta: Meta<typeof Input> = {
   },
 
   decorators: [
-    (Story, context) => {
-      const theme = context.globals.theme || 'booker'
-      return (
-        <div
-          data-theme={theme}
-          style={{
-            padding: '3rem',
-            background: 'var(--surface-colour-secondary)',
-          }}
-        >
-          <Story />
-        </div>
-      )
+    (Story) => {
+      return <Story />
     },
   ],
 }

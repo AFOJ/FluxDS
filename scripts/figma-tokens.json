@@ -312,7 +312,7 @@
             }
           }
         },
-        "BrandB": {
+        "venus": {
           "Cherry": {
             "50": {
               "value": "#f9f3f5",
@@ -628,7 +628,7 @@
             }
           }
         },
-        "BrandB": {
+        "venus": {
           "Font family": {
             "Body": {
               "value": "Open Sans",
@@ -1031,60 +1031,60 @@
       }
     }
   },
-  "Alias colours/BrandB": {
+  "Alias colours/venus": {
     "Primary": {
       "Lightest": {
-        "value": "{Colour.Brand.BrandB.Cherry.50}",
+        "value": "{Colour.Brand.venus.Cherry.50}",
         "type": "color"
       },
       "Default": {
-        "value": "{Colour.Brand.BrandB.Cherry.Default}",
+        "value": "{Colour.Brand.venus.Cherry.Default}",
         "type": "color"
       },
       "Dark": {
-        "value": "{Colour.Brand.BrandB.Cherry.600}",
+        "value": "{Colour.Brand.venus.Cherry.600}",
         "type": "color"
       },
       "Lighter": {
-        "value": "{Colour.Brand.BrandB.Cherry.100}",
+        "value": "{Colour.Brand.venus.Cherry.100}",
         "type": "color"
       },
       "Darkest": {
-        "value": "{Colour.Brand.BrandB.Cherry.700}",
+        "value": "{Colour.Brand.venus.Cherry.700}",
         "type": "color"
       },
       "AAA Text": {
-        "value": "{Colour.Brand.BrandB.Cherry.700}",
+        "value": "{Colour.Brand.venus.Cherry.700}",
         "type": "color"
       },
       "AAA Surface": {
-        "value": "{Colour.Brand.BrandB.Cherry.700}",
+        "value": "{Colour.Brand.venus.Cherry.700}",
         "type": "color"
       },
       "Light": {
-        "value": "{Colour.Brand.BrandB.Cherry.200}",
+        "value": "{Colour.Brand.venus.Cherry.200}",
         "type": "color"
       }
     },
     "Tertiary": {
       "Dark": {
-        "value": "{Colour.Brand.BrandB.Violet.600}",
+        "value": "{Colour.Brand.venus.Violet.600}",
         "type": "color"
       },
       "Default": {
-        "value": "{Colour.Brand.BrandB.Violet.Default}",
+        "value": "{Colour.Brand.venus.Violet.Default}",
         "type": "color"
       },
       "Lighter": {
-        "value": "{Colour.Brand.BrandB.Violet.50}",
+        "value": "{Colour.Brand.venus.Violet.50}",
         "type": "color"
       },
       "Darker": {
-        "value": "{Colour.Brand.BrandB.Violet.700}",
+        "value": "{Colour.Brand.venus.Violet.700}",
         "type": "color"
       },
       "Light": {
-        "value": "{Colour.Brand.BrandB.Violet.300}",
+        "value": "{Colour.Brand.venus.Violet.300}",
         "type": "color"
       }
     },
@@ -1132,7 +1132,7 @@
     },
     "Information": {
       "Light": {
-        "value": "{Colour.Brand.BrandB.Accent.Ice}",
+        "value": "{Colour.Brand.venus.Accent.Ice}",
         "type": "color"
       },
       "Default": {
@@ -1228,45 +1228,45 @@
     },
     "Accent": {
       "Default": {
-        "value": "{Colour.Brand.BrandB.Salt.1000}",
+        "value": "{Colour.Brand.venus.Salt.1000}",
         "type": "color"
       },
       "Spritz": {
-        "value": "{Colour.Brand.BrandB.Accent.Spritz}",
+        "value": "{Colour.Brand.venus.Accent.Spritz}",
         "type": "color"
       },
       "Burgundy": {
-        "value": "{Colour.Brand.BrandB.Accent.Burgundy}",
+        "value": "{Colour.Brand.venus.Accent.Burgundy}",
         "type": "color"
       },
       "Ice": {
-        "value": "{Colour.Brand.BrandB.Accent.Ice}",
+        "value": "{Colour.Brand.venus.Accent.Ice}",
         "type": "color"
       },
       "Citrus": {
-        "value": "{Colour.Brand.BrandB.Accent.Citrus}",
+        "value": "{Colour.Brand.venus.Accent.Citrus}",
         "type": "color"
       },
       "Violet": {
-        "value": "{Colour.Brand.BrandB.Accent.Violet}",
+        "value": "{Colour.Brand.venus.Accent.Violet}",
         "type": "color"
       }
     },
     "Secondary": {
       "Default": {
-        "value": "{Colour.Brand.BrandB.Salt.1000}",
+        "value": "{Colour.Brand.venus.Salt.1000}",
         "type": "color"
       },
       "Dark": {
-        "value": "{Colour.Brand.BrandB.Salt.1050}",
+        "value": "{Colour.Brand.venus.Salt.1050}",
         "type": "color"
       },
       "Darker": {
-        "value": "{Colour.Brand.BrandB.Salt.1100}",
+        "value": "{Colour.Brand.venus.Salt.1100}",
         "type": "color"
       },
       "Darkest": {
-        "value": "{Colour.Brand.BrandB.Salt.2000}",
+        "value": "{Colour.Brand.venus.Salt.2000}",
         "type": "color"
       }
     }
@@ -1767,7 +1767,7 @@
       }
     }
   },
-  "Mapped/BrandB": {
+  "Mapped/venus": {
     "Surface": {
       "Colour": {
         "Page": {
@@ -1800,7 +1800,7 @@
             "type": "color"
           },
           "Inverse": {
-            "value": "{Colour.Brand.BrandB.Salt.1050}",
+            "value": "{Colour.Brand.venus.Salt.1050}",
             "type": "color"
           },
           "Hover-Primary": {
@@ -1812,7 +1812,7 @@
             "type": "color"
           },
           "Secondary": {
-            "value": "{Colour.Brand.BrandB.Accent.Burgundy}",
+            "value": "{Colour.Brand.venus.Accent.Burgundy}",
             "type": "color"
           },
           "Hover-Secondary": {
@@ -1877,7 +1877,7 @@
           "type": "color"
         },
         "Offer": {
-          "value": "{Colour.Brand.BrandB.Violet.300}",
+          "value": "{Colour.Brand.venus.Violet.300}",
           "type": "color"
         },
         "Accent 3": {
@@ -1889,7 +1889,7 @@
           "type": "color"
         },
         "Offer-Hover": {
-          "value": "{Colour.Brand.BrandB.Violet.400}",
+          "value": "{Colour.Brand.venus.Violet.400}",
           "type": "color"
         },
         "Error Light": {
@@ -1909,7 +1909,7 @@
           "type": "color"
         },
         "Passive 3": {
-          "value": "{Colour.Brand.BrandB.Salt.1300}",
+          "value": "{Colour.Brand.venus.Salt.1300}",
           "type": "color"
         },
         "Tag Light": {
@@ -1917,7 +1917,7 @@
           "type": "color"
         },
         "Tag Dark": {
-          "value": "{Colour.Brand.BrandB.Accent.Spritz}",
+          "value": "{Colour.Brand.venus.Accent.Spritz}",
           "type": "color"
         },
         "Brand Secondary": {
@@ -1926,7 +1926,7 @@
         }
       },
       "Brand Logo": {
-        "value": "BrandB",
+        "value": "venus",
         "type": "text"
       }
     },
@@ -2086,7 +2086,7 @@
             "type": "color"
           },
           "On-page": {
-            "value": "{Colour.Brand.BrandB.Salt.1000}",
+            "value": "{Colour.Brand.venus.Salt.1000}",
             "type": "color"
           },
           "Active": {
@@ -2119,7 +2119,7 @@
           "type": "color"
         },
         "Passive": {
-          "value": "{Colour.Brand.BrandB.Salt.1300}",
+          "value": "{Colour.Brand.venus.Salt.1300}",
           "type": "color"
         },
         "Secondary": {
@@ -2199,15 +2199,15 @@
     "Font": {
       "Font family": {
         "Headings": {
-          "value": "{Font.Brand.BrandB.Font family.Heading}",
+          "value": "{Font.Brand.venus.Font family.Heading}",
           "type": "text"
         },
         "Paragraph": {
-          "value": "{Font.Brand.BrandB.Font family.Body}",
+          "value": "{Font.Brand.venus.Font family.Body}",
           "type": "text"
         },
         "Sub Headings": {
-          "value": "{Font.Brand.BrandB.Font family.Sub Heading}",
+          "value": "{Font.Brand.venus.Font family.Sub Heading}",
           "type": "text"
         }
       },
@@ -2893,9 +2893,9 @@
       "global",
       "Primitives/Default",
       "Alias colours/booker",
-      "Alias colours/BrandB",
+      "Alias colours/venus",
       "Mapped/booker",
-      "Mapped/BrandB",
+      "Mapped/venus",
       "Responsive/Desktop",
       "Responsive/Mobile"
     ]
