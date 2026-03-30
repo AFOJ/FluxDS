@@ -165,7 +165,7 @@
           "type": "color"
         }
       },
-      "Brand": {
+      "Theme": {
         "booker": {
           "Orange": {
             "50": {
@@ -593,7 +593,7 @@
       }
     },
     "Font": {
-      "Brand": {
+      "Theme": {
         "booker": {
           "Font family": {
             "Body": {
@@ -814,57 +814,57 @@
   "Alias colours/booker": {
     "Primary": {
       "Lightest": {
-        "value": "{Colour.Brand.booker.Orange.50}",
+        "value": "{Colour.Theme.booker.Orange.50}",
         "type": "color"
       },
       "Default": {
-        "value": "{Colour.Brand.booker.Orange.Default}",
+        "value": "{Colour.Theme.booker.Orange.Default}",
         "type": "color"
       },
       "Dark": {
-        "value": "{Colour.Brand.booker.Orange.600}",
+        "value": "{Colour.Theme.booker.Orange.600}",
         "type": "color"
       },
       "Lighter": {
-        "value": "{Colour.Brand.booker.Orange.100}",
+        "value": "{Colour.Theme.booker.Orange.100}",
         "type": "color"
       },
       "Darkest": {
-        "value": "{Colour.Brand.booker.Orange.700}",
+        "value": "{Colour.Theme.booker.Orange.700}",
         "type": "color"
       },
       "AAA Text": {
-        "value": "{Colour.Brand.booker.Orange.700}",
+        "value": "{Colour.Theme.booker.Orange.700}",
         "type": "color"
       },
       "AAA Surface": {
-        "value": "{Colour.Brand.booker.Orange.700}",
+        "value": "{Colour.Theme.booker.Orange.700}",
         "type": "color"
       },
       "Light": {
-        "value": "{Colour.Brand.booker.Orange.200}",
+        "value": "{Colour.Theme.booker.Orange.200}",
         "type": "color"
       }
     },
     "Tertiary": {
       "Dark": {
-        "value": "{Colour.Brand.booker.Green.600}",
+        "value": "{Colour.Theme.booker.Green.600}",
         "type": "color"
       },
       "Default": {
-        "value": "{Colour.Brand.booker.Green.Default}",
+        "value": "{Colour.Theme.booker.Green.Default}",
         "type": "color"
       },
       "Lighter": {
-        "value": "{Colour.Brand.booker.Green.50}",
+        "value": "{Colour.Theme.booker.Green.50}",
         "type": "color"
       },
       "Darker": {
-        "value": "{Colour.Brand.booker.Green.700}",
+        "value": "{Colour.Theme.booker.Green.700}",
         "type": "color"
       },
       "Light": {
-        "value": "{Colour.Brand.booker.Green.300}",
+        "value": "{Colour.Theme.booker.Green.300}",
         "type": "color"
       }
     },
@@ -1008,25 +1008,25 @@
     },
     "Accent": {
       "Default": {
-        "value": "{Colour.Brand.booker.Accent.1000}",
+        "value": "{Colour.Theme.booker.Accent.1000}",
         "type": "color"
       }
     },
     "Secondary": {
       "Default": {
-        "value": "{Colour.Brand.booker.Paper.1000}",
+        "value": "{Colour.Theme.booker.Paper.1000}",
         "type": "color"
       },
       "Dark": {
-        "value": "{Colour.Brand.booker.Paper.1100}",
+        "value": "{Colour.Theme.booker.Paper.1100}",
         "type": "color"
       },
       "Darker": {
-        "value": "{Colour.Brand.booker.Paper.1200}",
+        "value": "{Colour.Theme.booker.Paper.1200}",
         "type": "color"
       },
       "Darkest": {
-        "value": "{Colour.Brand.booker.Paper.2000}",
+        "value": "{Colour.Theme.booker.Paper.2000}",
         "type": "color"
       }
     }
@@ -1034,57 +1034,57 @@
   "Alias colours/venus": {
     "Primary": {
       "Lightest": {
-        "value": "{Colour.Brand.venus.Cherry.50}",
+        "value": "{Colour.Theme.venus.Cherry.50}",
         "type": "color"
       },
       "Default": {
-        "value": "{Colour.Brand.venus.Cherry.Default}",
+        "value": "{Colour.Theme.venus.Cherry.Default}",
         "type": "color"
       },
       "Dark": {
-        "value": "{Colour.Brand.venus.Cherry.600}",
+        "value": "{Colour.Theme.venus.Cherry.600}",
         "type": "color"
       },
       "Lighter": {
-        "value": "{Colour.Brand.venus.Cherry.100}",
+        "value": "{Colour.Theme.venus.Cherry.100}",
         "type": "color"
       },
       "Darkest": {
-        "value": "{Colour.Brand.venus.Cherry.700}",
+        "value": "{Colour.Theme.venus.Cherry.700}",
         "type": "color"
       },
       "AAA Text": {
-        "value": "{Colour.Brand.venus.Cherry.700}",
+        "value": "{Colour.Theme.venus.Cherry.700}",
         "type": "color"
       },
       "AAA Surface": {
-        "value": "{Colour.Brand.venus.Cherry.700}",
+        "value": "{Colour.Theme.venus.Cherry.700}",
         "type": "color"
       },
       "Light": {
-        "value": "{Colour.Brand.venus.Cherry.200}",
+        "value": "{Colour.Theme.venus.Cherry.200}",
         "type": "color"
       }
     },
     "Tertiary": {
       "Dark": {
-        "value": "{Colour.Brand.venus.Violet.600}",
+        "value": "{Colour.Theme.venus.Violet.600}",
         "type": "color"
       },
       "Default": {
-        "value": "{Colour.Brand.venus.Violet.Default}",
+        "value": "{Colour.Theme.venus.Violet.Default}",
         "type": "color"
       },
       "Lighter": {
-        "value": "{Colour.Brand.venus.Violet.50}",
+        "value": "{Colour.Theme.venus.Violet.50}",
         "type": "color"
       },
       "Darker": {
-        "value": "{Colour.Brand.venus.Violet.700}",
+        "value": "{Colour.Theme.venus.Violet.700}",
         "type": "color"
       },
       "Light": {
-        "value": "{Colour.Brand.venus.Violet.300}",
+        "value": "{Colour.Theme.venus.Violet.300}",
         "type": "color"
       }
     },
@@ -1132,7 +1132,7 @@
     },
     "Information": {
       "Light": {
-        "value": "{Colour.Brand.venus.Accent.Ice}",
+        "value": "{Colour.Theme.venus.Accent.Ice}",
         "type": "color"
       },
       "Default": {
@@ -1228,45 +1228,45 @@
     },
     "Accent": {
       "Default": {
-        "value": "{Colour.Brand.venus.Salt.1000}",
+        "value": "{Colour.Theme.venus.Salt.1000}",
         "type": "color"
       },
       "Spritz": {
-        "value": "{Colour.Brand.venus.Accent.Spritz}",
+        "value": "{Colour.Theme.venus.Accent.Spritz}",
         "type": "color"
       },
       "Burgundy": {
-        "value": "{Colour.Brand.venus.Accent.Burgundy}",
+        "value": "{Colour.Theme.venus.Accent.Burgundy}",
         "type": "color"
       },
       "Ice": {
-        "value": "{Colour.Brand.venus.Accent.Ice}",
+        "value": "{Colour.Theme.venus.Accent.Ice}",
         "type": "color"
       },
       "Citrus": {
-        "value": "{Colour.Brand.venus.Accent.Citrus}",
+        "value": "{Colour.Theme.venus.Accent.Citrus}",
         "type": "color"
       },
       "Violet": {
-        "value": "{Colour.Brand.venus.Accent.Violet}",
+        "value": "{Colour.Theme.venus.Accent.Violet}",
         "type": "color"
       }
     },
     "Secondary": {
       "Default": {
-        "value": "{Colour.Brand.venus.Salt.1000}",
+        "value": "{Colour.Theme.venus.Salt.1000}",
         "type": "color"
       },
       "Dark": {
-        "value": "{Colour.Brand.venus.Salt.1050}",
+        "value": "{Colour.Theme.venus.Salt.1050}",
         "type": "color"
       },
       "Darker": {
-        "value": "{Colour.Brand.venus.Salt.1100}",
+        "value": "{Colour.Theme.venus.Salt.1100}",
         "type": "color"
       },
       "Darkest": {
-        "value": "{Colour.Brand.venus.Salt.2000}",
+        "value": "{Colour.Theme.venus.Salt.2000}",
         "type": "color"
       }
     }
@@ -1275,7 +1275,7 @@
     "Surface": {
       "Colour": {
         "Page": {
-          "value": "{Colour.Brand.booker.Paper.1000}",
+          "value": "{Colour.Theme.booker.Paper.1000}",
           "type": "color"
         },
         "Positive Light": {
@@ -1332,7 +1332,7 @@
           "value": "{Accent.Default}",
           "type": "color"
         },
-        "Brand Primary": {
+        "Theme Primary": {
           "value": "{Primary.Default}",
           "type": "color"
         },
@@ -1348,15 +1348,15 @@
           "value": "{Neutral.White-30%}",
           "type": "color"
         },
-        "Brand AAA": {
+        "Theme AAA": {
           "value": "{Primary.AAA Surface}",
           "type": "color"
         },
-        "Brand AA": {
+        "Theme AA": {
           "value": "{Primary.Dark}",
           "type": "color"
         },
-        "Brand Accent": {
+        "Theme Accent": {
           "value": "{Primary.Lightest}",
           "type": "color"
         },
@@ -1409,7 +1409,7 @@
           "type": "color"
         },
         "Passive 3": {
-          "value": "{Colour.Brand.booker.Paper.1300}",
+          "value": "{Colour.Theme.booker.Paper.1300}",
           "type": "color"
         },
         "Tag Light": {
@@ -1420,12 +1420,12 @@
           "value": "{Primary.Default}",
           "type": "color"
         },
-        "Brand Secondary": {
+        "Theme Secondary": {
           "value": "{Primary.Default}",
           "type": "color"
         }
       },
-      "Brand Logo": {
+      "Theme Logo": {
         "value": "booker",
         "type": "text"
       }
@@ -1498,16 +1498,16 @@
           "value": "{Neutral.White}",
           "type": "color"
         },
-        "Brand": {
+        "Theme": {
           "value": "{Primary.Default}",
           "type": "color"
         },
-        "Brand AAA": {
+        "Theme AAA": {
           "value": "{Primary.AAA Text}",
           "type": "color"
         },
         "Available": {
-          "value": "{Colour.Brand.booker.Green.700}",
+          "value": "{Colour.Theme.booker.Green.700}",
           "type": "color"
         }
       }
@@ -1619,7 +1619,7 @@
           "type": "color"
         },
         "Passive": {
-          "value": "{Colour.Brand.booker.Paper.1300}",
+          "value": "{Colour.Theme.booker.Paper.1300}",
           "type": "color"
         },
         "Secondary": {
@@ -1699,15 +1699,15 @@
     "Font": {
       "Font family": {
         "Headings": {
-          "value": "{Font.Brand.booker.Font family.Heading}",
+          "value": "{Font.Theme.booker.Font family.Heading}",
           "type": "text"
         },
         "Paragraph": {
-          "value": "{Font.Brand.booker.Font family.Body}",
+          "value": "{Font.Theme.booker.Font family.Body}",
           "type": "text"
         },
         "Sub Headings": {
-          "value": "{Font.Brand.booker.Font family.Heading}",
+          "value": "{Font.Theme.booker.Font family.Heading}",
           "type": "text"
         }
       },
@@ -1800,7 +1800,7 @@
             "type": "color"
           },
           "Inverse": {
-            "value": "{Colour.Brand.venus.Salt.1050}",
+            "value": "{Colour.Theme.venus.Salt.1050}",
             "type": "color"
           },
           "Hover-Primary": {
@@ -1812,7 +1812,7 @@
             "type": "color"
           },
           "Secondary": {
-            "value": "{Colour.Brand.venus.Accent.Burgundy}",
+            "value": "{Colour.Theme.venus.Accent.Burgundy}",
             "type": "color"
           },
           "Hover-Secondary": {
@@ -1832,7 +1832,7 @@
           "value": "{Accent.Default}",
           "type": "color"
         },
-        "Brand Primary": {
+        "Theme Primary": {
           "value": "{Primary.Default}",
           "type": "color"
         },
@@ -1848,15 +1848,15 @@
           "value": "{Neutral.White-30%}",
           "type": "color"
         },
-        "Brand AAA": {
+        "Theme AAA": {
           "value": "{Primary.AAA Surface}",
           "type": "color"
         },
-        "Brand AA": {
+        "Theme AA": {
           "value": "{Primary.Dark}",
           "type": "color"
         },
-        "Brand Accent": {
+        "Theme Accent": {
           "value": "{Primary.Lightest}",
           "type": "color"
         },
@@ -1877,7 +1877,7 @@
           "type": "color"
         },
         "Offer": {
-          "value": "{Colour.Brand.venus.Violet.300}",
+          "value": "{Colour.Theme.venus.Violet.300}",
           "type": "color"
         },
         "Accent 3": {
@@ -1889,7 +1889,7 @@
           "type": "color"
         },
         "Offer-Hover": {
-          "value": "{Colour.Brand.venus.Violet.400}",
+          "value": "{Colour.Theme.venus.Violet.400}",
           "type": "color"
         },
         "Error Light": {
@@ -1909,7 +1909,7 @@
           "type": "color"
         },
         "Passive 3": {
-          "value": "{Colour.Brand.venus.Salt.1300}",
+          "value": "{Colour.Theme.venus.Salt.1300}",
           "type": "color"
         },
         "Tag Light": {
@@ -1917,15 +1917,15 @@
           "type": "color"
         },
         "Tag Dark": {
-          "value": "{Colour.Brand.venus.Accent.Spritz}",
+          "value": "{Colour.Theme.venus.Accent.Spritz}",
           "type": "color"
         },
-        "Brand Secondary": {
+        "Theme Secondary": {
           "value": "{Primary.Default}",
           "type": "color"
         }
       },
-      "Brand Logo": {
+      "Theme Logo": {
         "value": "venus",
         "type": "text"
       }
@@ -1998,11 +1998,11 @@
           "value": "{Neutral.White}",
           "type": "color"
         },
-        "Brand": {
+        "Theme": {
           "value": "{Primary.Default}",
           "type": "color"
         },
-        "Brand AAA": {
+        "Theme AAA": {
           "value": "{Primary.AAA Text}",
           "type": "color"
         },
@@ -2086,7 +2086,7 @@
             "type": "color"
           },
           "On-page": {
-            "value": "{Colour.Brand.venus.Salt.1000}",
+            "value": "{Colour.Theme.venus.Salt.1000}",
             "type": "color"
           },
           "Active": {
@@ -2119,7 +2119,7 @@
           "type": "color"
         },
         "Passive": {
-          "value": "{Colour.Brand.venus.Salt.1300}",
+          "value": "{Colour.Theme.venus.Salt.1300}",
           "type": "color"
         },
         "Secondary": {
@@ -2199,15 +2199,15 @@
     "Font": {
       "Font family": {
         "Headings": {
-          "value": "{Font.Brand.venus.Font family.Heading}",
+          "value": "{Font.Theme.venus.Font family.Heading}",
           "type": "text"
         },
         "Paragraph": {
-          "value": "{Font.Brand.venus.Font family.Body}",
+          "value": "{Font.Theme.venus.Font family.Body}",
           "type": "text"
         },
         "Sub Headings": {
-          "value": "{Font.Brand.venus.Font family.Sub Heading}",
+          "value": "{Font.Theme.venus.Font family.Sub Heading}",
           "type": "text"
         }
       },
