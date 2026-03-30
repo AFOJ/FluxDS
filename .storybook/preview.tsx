@@ -5,12 +5,12 @@ import '../src/global.css'
 const preview: Preview = {
   globalTypes: {
     theme: {
-      description: 'Global Brand Theme',
-      defaultValue: 'BrandA',
+      description: 'Switch Global Theme',
+      defaultValue: 'Booker',
       toolbar: {
         title: 'Theme',
         icon: 'paintbrush',
-        items: ['BrandA', 'BrandB'],
+        items: ['Booker', 'BrandB'],
         dynamicTitle: true,
       },
     },

@@ -77,7 +77,7 @@ const meta: Meta<typeof Input> = {
 
   decorators: [
     (Story, context) => {
-      const theme = context.globals.theme || 'BrandA'
+      const theme = context.globals.theme || 'booker'
       return (
         <div
           data-theme={theme}

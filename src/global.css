@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root,
-[data-theme='BrandA'] {
+[data-theme='booker'] {
   --surface-colour-page: #faf9f5;
   --surface-colour-positive-light: #e6f9e6;
   --surface-colour-disabled-dark: #f5f4f0;
@@ -39,7 +39,7 @@
   --surface-colour-tag-light: #ffe6df;
   --surface-colour-tag-dark: #fc4c02;
   --surface-colour-brand-secondary: #fc4c02;
-  --surface-brand-logo: BrandA;
+  --surface-brand-logo: booker;
   --text-colour-headings: #000000;
   --text-colour-body: #000000;
   --text-colour-success: #28a745;
