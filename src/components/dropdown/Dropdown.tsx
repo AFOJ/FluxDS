@@ -110,7 +110,7 @@ export function Dropdown(props: Readonly<DropdownProps>) {
 
   return (
     <div
-      class={clsx('w-full relative flex flex-col', className)}
+      class={clsx('w-full relative flex flex-col gap-y-0.5', className)}
       ref={containerRef}
       onKeyDown={handleKeyDown}
     >
@@ -249,8 +249,8 @@ export function Dropdown(props: Readonly<DropdownProps>) {
       </div>
 
       {required && (
-        <p class="[font-size:var(--res-mobile-font-size-body-xs)] text-[var(--text-colour-disabled)] font-light">
-          <span class="text-[var(--text-colour-warning)]">*</span>required
+        <p class="[font-size:var(--res-mobile-font-size-body-xs)] text-(--text-colour-body) font-light">
+          <span class="text-(--text-colour-warning)">*</span>required
         </p>
       )}
     </div>

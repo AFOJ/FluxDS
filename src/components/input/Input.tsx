@@ -166,7 +166,7 @@ export function Input(props: Readonly<InputFieldProps>) {
       </div>
 
       {required && (
-        <p class="[font-size:var(--res-mobile-font-size-body-xs)] text-[var(--text-colour-disabled)]  ">
+        <p class="[font-size:var(--res-mobile-font-size-body-xs)] text-(--text-colour-body)">
           <span class="text-[var(--text-colour-warning)] ">*</span>required
         </p>
       )}
