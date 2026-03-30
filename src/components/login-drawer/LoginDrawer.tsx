@@ -91,7 +91,7 @@ export function LoginDrawer(props: Readonly<LoginDrawerProps>) {
       <h2
         id="login-drawer-title"
         class={clsx(
-          'text-[var(--text-colour-brand)]',
+          'text-[var(--text-colour-theme)]',
           '[font-size:var(--res-mobile-font-size-heading-h4)] sm:[font-size:var(--res-desktop-font-size-heading-h4)] ',
           '[font-weight:var(--font-font-weight-header-medium)]',
           'sm:max-w-[300px]',

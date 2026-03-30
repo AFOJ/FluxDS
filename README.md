@@ -46,16 +46,16 @@ The token to css script is designed to be selective about which data it processe
     "tokenSetOrder": [
       "global",
       "Primitives/Default",
-      "Alias colours/BrandA",
-      "Alias colours/BrandB",
-      "Mapped/BrandB",
+      "Alias colours/booker",
+      "Alias colours/venus",
+      "Mapped/venus",
       "Responsive/Desktop",
       "Responsive/Mobile"
     ]
   }
 ```
 
-<em>With the example above, `Mapped/BrandA` will not be considered when processing the JSON even if it is in the actual structure.</em>
+<em>With the example above, `Mapped/booker` will not be considered when processing the JSON even if it is in the actual structure.</em>
 
 ## Getting started
 
@@ -100,11 +100,11 @@ npm run storybook:build
 To apply a theme to an area, add the `data-theme={your-target-theme}` attribute to a wrapper element.
 
 ```jsx
-<div data-theme="BrandA">
-  <Button>Scoped to Brand A</Button>
+<div data-theme="booker">
+  <Button>Scoped to the theme "Booker"</Button>
 
-  <div data-theme="BrandB">
-    <Button>Scoped to Brand B</Button>
+  <div data-theme="venus">
+    <Button>Scoped to the theme "Venus"</Button>
   </div>
 </div>
 ```

@@ -65,19 +65,8 @@ const meta: Meta<typeof Dropdown> = {
   },
 
   decorators: [
-    (Story, context) => {
-      const theme = context.globals.theme || 'BrandA'
-      return (
-        <div
-          data-theme={theme}
-          style={{
-            padding: '3rem',
-            background: 'var(--surface-colour-secondary)',
-          }}
-        >
-          <Story />
-        </div>
-      )
+    (Story) => {
+      return <Story />
     },
   ],
 }

@@ -10,8 +10,8 @@ export function StoryWrapper(props: Readonly<StoryWrapperProps>) {
   const { theme, children, ...rest } = props
   return (
     <div
-      data-theme={theme ?? 'BrandA'}
-      class="h-fit bg-[var(--surface-colour-page)] [font-family:var(--font-font-family-paragraph)]"
+      data-theme={theme?.toLowerCase() ?? 'booker'}
+      class="h-fit bg-white [font-family:var(--font-font-family-paragraph)]"
       {...rest}
     >
       {children}

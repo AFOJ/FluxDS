@@ -27,7 +27,7 @@ const FONT_FAMILY_MAP = {
  * Resolves token references like "{Scale.X}" by looking them up in the token tree.
  * Recursively follows references until a concrete value is found.
  */
-function resolveTokenValue(tokenValue, brandContext) {
+function resolveTokenValue(tokenValue, themeContext) {
   if (typeof tokenValue !== 'string' || !tokenValue.startsWith('{')) {
     return tokenValue
   }
@@ -37,8 +37,8 @@ function resolveTokenValue(tokenValue, brandContext) {
 
   // Possible locations where the token might be defined
   const searchRoots = [
-    figmaTokens[`Mapped/${brandContext}`], // Unfortunately needed for just {Surface.Colour.Accent} :(
-    figmaTokens[`Alias colours/${brandContext}`],
+    figmaTokens[`Mapped/${themeContext}`], // Unfortunately needed for just {Surface.Colour.Accent} :(
+    figmaTokens[`Alias colours/${themeContext}`],
     figmaTokens['Primitives/Default'],
   ]
 
@@ -55,7 +55,7 @@ function resolveTokenValue(tokenValue, brandContext) {
 
     // If we've found a value, recursively resolve it (in case it's also a reference)
     if (current?.value !== undefined) {
-      return resolveTokenValue(current.value, brandContext)
+      return resolveTokenValue(current.value, themeContext)
     }
   }
 
@@ -67,10 +67,10 @@ function resolveTokenValue(tokenValue, brandContext) {
  *
  * @param {Object} categoryObj -The object in the token tree we are processing (e.g., Surface, Text).
  * @param {string} prefix - The CSS custom property prefix (e.g., --surface).
- * @param {string} brand - The current brand context for resolving references.
+ * @param {string} currentTheme - The current theme context for resolving references.
  * @param {string[]} cssLines - The array to which generated CSS lines are appended.
  */
-function processTokenCategory(categoryObj, prefix, brand, cssLines) {
+function processTokenCategory(categoryObj, prefix, currentTheme, cssLines) {
   for (const [tokenName, token] of Object.entries(categoryObj)) {
     if (tokenName.includes('↘︎')) {
       continue
@@ -82,12 +82,12 @@ function processTokenCategory(categoryObj, prefix, brand, cssLines) {
     const isLeafToken = token.value !== undefined
 
     if (!isLeafToken) {
-      processTokenCategory(token, cssPropertyName, brand, cssLines)
+      processTokenCategory(token, cssPropertyName, currentTheme, cssLines)
       continue
     }
 
     // If this token has a direct value, process it
-    let resolvedValue = resolveTokenValue(token.value, brand)
+    let resolvedValue = resolveTokenValue(token.value, currentTheme)
 
     if (cssPropertyName.includes('weight')) {
       const lookupKey = String(resolvedValue).toLowerCase().trim()
@@ -117,12 +117,12 @@ function processTokenCategory(categoryObj, prefix, brand, cssLines) {
   }
 }
 
-function getBrandCategories(brand) {
-  return Object.keys(figmaTokens[`Mapped/${brand}`])
+function getThemeCategories(themeKey) {
+  return Object.keys(figmaTokens[`Mapped/${themeKey}`])
 }
 
 function generateResponsiveTokensCSS() {
-  const BRAND = 'NOT-IMPORTANT'
+  const THEME_KEY = 'NOT-IMPORTANT'
   let cssContent = '/* Responsive Tokens */\n:root {\n'
   const cssLines = []
 
@@ -130,7 +130,7 @@ function generateResponsiveTokensCSS() {
     processTokenCategory(
       figmaTokens['Responsive/Desktop'],
       '--res-desktop',
-      BRAND,
+      THEME_KEY,
       cssLines,
     )
   }
@@ -139,7 +139,7 @@ function generateResponsiveTokensCSS() {
     processTokenCategory(
       figmaTokens['Responsive/Mobile'],
       '--res-mobile',
-      BRAND,
+      THEME_KEY,
       cssLines,
     )
   }
@@ -150,20 +150,20 @@ function generateResponsiveTokensCSS() {
 }
 
 /**
- * Generates all CSS custom properties for a specific brand.
+ * Generates all CSS custom properties for a specific theme.
  */
-function generateBrandCSS(brand) {
+function generateThemeCSS(theme) {
   const cssLines = []
-  const categories = getBrandCategories(brand)
+  const categories = getThemeCategories(theme)
 
   // Process each design token category
   categories.forEach((category) => {
-    const brandCategory = figmaTokens[`Mapped/${brand}`]?.[category]
-    if (brandCategory) {
+    const themeCategory = figmaTokens[`Mapped/${theme}`]?.[category]
+    if (themeCategory) {
       processTokenCategory(
-        brandCategory,
+        themeCategory,
         `--${category.toLowerCase()}`,
-        brand,
+        theme,
         cssLines,
       )
     }
@@ -172,28 +172,28 @@ function generateBrandCSS(brand) {
   return cssLines.join('\n')
 }
 
-function getBrandKeys() {
+function getThemeKeys() {
   const searchKey = 'Mapped/'
   return figmaTokens['$metadata']?.['tokenSetOrder']
     .filter((key) => key.startsWith(searchKey))
     .map((key) => key.replace(searchKey, ''))
 }
 
-const brands = getBrandKeys()
+const themes = getThemeKeys()
 const GLOBAL_CSS_PATH = 'src/global.css'
 let cssContent = `/* To use, copy the content of this into ${GLOBAL_CSS_PATH} */\n\n`
 
-brands.forEach((brand, index) => {
-  const isFirstBrand = index === 0
+themes.forEach((theme, index) => {
+  const isFirstTheme = index === 0
 
-  // First brand shares selector with :root for default theme
-  // This way I don't need a context switcher for handling default brand
-  const selector = isFirstBrand
-    ? `:root, [data-theme="${brand}"]`
-    : `[data-theme="${brand}"]`
+  // First theme shares selector with :root for default theme
+  // This way I don't need a context switcher for handling the default theme
+  const selector = isFirstTheme
+    ? `:root, [data-theme="${theme}"]`
+    : `[data-theme="${theme}"]`
 
   cssContent += `${selector} {\n`
-  cssContent += generateBrandCSS(brand)
+  cssContent += generateThemeCSS(theme)
   cssContent += '\n}\n'
 })
 

@@ -26,7 +26,7 @@ export function Card(props: Readonly<CardProps>) {
       class={clsx(
         'flex flex-wrap',
         'gap-[var(--res-mobile-spacing-lg)] sm:gap-[var(--res-desktop-spacing-lg)]',
-        'bg-[var(--surface-colour-brand-primary)] p-[var(--res-mobile-spacing-lg)] sm:p-[var(--res-desktop-spacing-lg)] rounded-[var(--border-radius-xl)]',
+        'bg-[var(--surface-colour-theme-primary)] p-[var(--res-mobile-spacing-lg)] sm:p-[var(--res-desktop-spacing-lg)] rounded-[var(--border-radius-xl)]',
         fill ? 'w-full' : 'w-fit',
         className,
       )}
@@ -77,7 +77,7 @@ function CardGraphic() {
         />
         <path
           d="M1.13379 42.4123H41.9478V83.6961L1.13379 42.4123Z"
-          class="fill-[var(--surface-colour-brand-primary)]"
+          class="fill-[var(--surface-colour-theme-primary)]"
         />
         <path
           d="M1.13379 1.55957L41.9478 42.4123M82.7618 83.6961L41.9478 42.4123M41.9478 42.4123H1.13379L41.9478 83.6961V42.4123Z"
