@@ -1,6 +1,6 @@
 import Button from '../button/'
 import Card from '../card'
-import { Dropdown } from '../dropdown/Dropdown'
+import Dropdown from '../dropdown/Dropdown'
 import { IconButton } from '../icons'
 import { Input } from '../input/Input'
 import { useRef, useEffect } from 'preact/hooks'

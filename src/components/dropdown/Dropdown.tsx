@@ -18,7 +18,7 @@ interface DropdownProps {
   class?: string
 }
 
-export function Dropdown(props: Readonly<DropdownProps>) {
+export default function Dropdown(props: Readonly<DropdownProps>) {
   const {
     label,
     options,
@@ -123,21 +123,22 @@ export function Dropdown(props: Readonly<DropdownProps>) {
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         class={clsx(
-          'relative w-full flex items-center p-4 justify-between transition-all duration-200  min-h-[--res-mobile-spacing-5xl]',
-          'rounded-[var(--border-radius-md)] border-none outline-none',
+          'relative w-full min-h-[--res-mobile-spacing-5xl]',
+          'flex items-center p-4 justify-between',
+          'rounded-(--border-radius-md) border-none outline-none',
+          'transition-all duration-200',
           {
-            'ring-inset  ring-[var(--border-colour-passive)]': !disabled,
-            'ring-[length:var(--border-width-lg)]': hasValue && !disabled,
-            'ring-[length:var(--border-width-md)]':
+            'ring-inset  ring-(--border-colour-passive)': !disabled,
+            'ring-(length:--border-width-lg)': hasValue && !disabled,
+            'ring-(length:--border-width-md)':
               isFocused && !hasValue && !disabled,
-            'ring-[length:var(--border-width-xs)]':
+            'ring-(length:--border-width-xs)':
               !isFocused && !hasValue && !disabled,
           },
           {
-            'bg-[var(--surface-colour-disabled-dark)] cursor-not-allowed':
-              disabled,
-            'bg-[var(--surface-colour-page)]': hasValue && !disabled,
-            'bg-[var(--surface-colour-secondary)]': !hasValue && !disabled,
+            'bg-(--surface-colour-disabled-dark) cursor-not-allowed': disabled,
+            'bg-(--surface-colour-page)': hasValue && !disabled,
+            'bg-(--surface-colour-secondary)': !hasValue && !disabled,
           },
         )}
       >
@@ -146,17 +147,17 @@ export function Dropdown(props: Readonly<DropdownProps>) {
             class={clsx(
               'absolute transition-all duration-200 pointer-events-none px-1',
               {
-                '-top-2 left-3 [font-size:var(--res-mobile-font-size-body-xs)] [font-weight:var(--font-font-weight-paragraph-regular)]':
+                '-top-2 left-3 [font-size:var(--res-mobile-font-size-body-xs)] font-(--font-font-weight-paragraph-regular)':
                   isFloating,
-                'top-1/2 -translate-y-1/2 [font-size:var(--res-mobile-font-size-body-md)] [font-weight:var(--font-font-weight-paragraph-medium)] text-[var(--text-colour-passive)]':
+                'top-1/2 -translate-y-1/2 [font-size:var(--res-mobile-font-size-body-md)] font-(--font-font-weight-paragraph-medium) text-(--text-colour-passive)':
                   !isFloating,
                 'left-9': !isFloating && icon,
                 'left-2': !isFloating && !icon,
                 // Below is purely for the background handling.
                 'bg-white': isFloating && !disabled && !hasValue,
-                'bg-gradient-to-b from-white from-50% to-[var(--surface-colour-page)] to-50%':
+                'bg-linear-to-b from-white from-50% to-(--surface-colour-page) to-50%':
                   isFloating && !disabled && hasValue,
-                'bg-transparent text-[var(--text-colour-disabled)]':
+                'bg-transparent text-(--text-colour-disabled)':
                   isFloating && disabled,
               },
             )}
@@ -168,8 +169,8 @@ export function Dropdown(props: Readonly<DropdownProps>) {
             <span
               aria-hidden="true"
               class={clsx({
-                'text-[var(--text-colour-disabled)]': disabled,
-                'text-[var(--text-colour-action-active)]': !disabled,
+                'text-(--text-colour-disabled)': disabled,
+                'text-(--text-colour-action-active)': !disabled,
               })}
             >
               {leftIconElement}
@@ -178,11 +179,11 @@ export function Dropdown(props: Readonly<DropdownProps>) {
 
           <span
             class={clsx(
-              '[font-weight:var(--font-font-weight-paragraph-medium)]',
+              'font-(--font-font-weight-paragraph-medium)',
               'truncate',
               {
-                'text-[var(--text-colour-disabled)]': disabled,
-                'text-[var(--text-colour-active)]': !disabled,
+                'text-(--text-colour-disabled)': disabled,
+                'text-(--text-colour-active)': !disabled,
               },
             )}
           >
@@ -194,8 +195,8 @@ export function Dropdown(props: Readonly<DropdownProps>) {
           aria-hidden="true"
           className={clsx('transition-transform duration-200', {
             'rotate-180': isFocused || isOpen,
-            'text-[var(--text-colour-disabled)]': disabled,
-            'text-[var(--text-colour-active)]': !disabled,
+            'text-(--text-colour-disabled)': disabled,
+            'text-(--text-colour-active)': !disabled,
           })}
         >
           <ChevronDownIcon />
@@ -212,15 +213,15 @@ export function Dropdown(props: Readonly<DropdownProps>) {
               'absolute z-50 overflow-auto',
               'w-full mt-1',
               'max-h-64',
-              'bg-[var(--surface-colour-secondary)]',
-              'border-none rounded-[var(--border-radius-md)]  shadow-2xl shadow-black/20 ',
+              'bg-(--surface-colour-secondary)',
+              'border-none rounded-(--border-radius-md)  shadow-2xl shadow-black/20 ',
               'focus:outline-none',
               '[&::-webkit-scrollbar]:w-3',
-              '[&::-webkit-scrollbar-thumb]:border-[4px] [&::-webkit-scrollbar-thumb]:border-solid [&::-webkit-scrollbar-thumb]:border-transparent',
+              '[&::-webkit-scrollbar-thumb]:border-4 [&::-webkit-scrollbar-thumb]:border-solid [&::-webkit-scrollbar-thumb]:border-transparent',
               '[&::-webkit-scrollbar-thumb]:bg-clip-padding',
               '[&::-webkit-scrollbar-thumb]:rounded-full',
-              '[&::-webkit-scrollbar-thumb]:bg-[var(--surface-colour-disabled-dark)]',
-              'hover:[&::-webkit-scrollbar-thumb]:bg-[var(--surface-colour-action-hover-primary)]',
+              '[&::-webkit-scrollbar-thumb]:bg-(--surface-colour-disabled-dark)',
+              'hover:[&::-webkit-scrollbar-thumb]:bg-(--surface-colour-action-hover-primary)',
               '[&::-webkit-scrollbar-track]:bg-transparent',
             )}
           >
@@ -235,8 +236,8 @@ export function Dropdown(props: Readonly<DropdownProps>) {
                   'cursor-pointer select-none p-3 [font-size:var(--res-mobile-font-size-body-sm)] transition-colors truncate',
                   'min-w-0',
                   {
-                    'bg-[var(--surface-colour-passive)]': activeIndex === index,
-                    'text-[var(--text-colour-active)] [font-weight:var(--font-font-weight-paragraph-bold)]':
+                    'bg-(--surface-colour-passive)': activeIndex === index,
+                    'text-(--text-colour-active) font-(--font-font-weight-paragraph-bold)':
                       selectedValue === option.value,
                   },
                 )}
