@@ -10,7 +10,7 @@ interface LoginDrawerProps {
   onClose?: () => void
   isOpen?: boolean
 }
-export function LoginDrawer(props: Readonly<LoginDrawerProps>) {
+export default function LoginDrawer(props: Readonly<LoginDrawerProps>) {
   const { onClose, isOpen = false } = props
 
   const drawerRef = useRef<HTMLDivElement>(null)
@@ -74,9 +74,9 @@ export function LoginDrawer(props: Readonly<LoginDrawerProps>) {
       aria-modal="true"
       aria-labelledby="login-drawer-title"
       class={clsx(
-        'w-full max-w-[500px] bg-[var(--surface-colour-secondary)]',
-        'flex flex-col gap-[var(--res-mobile-spacing-3xl)] sm:gap-[var(--res-desktop-spacing-2xl)]',
-        'p-[var(--res-mobile-spacing-2xl)] sm:p-[var(--res-desktop-spacing-2xl)]',
+        'w-full max-w-125 bg-(--surface-colour-secondary)',
+        'flex flex-col gap-(--res-mobile-spacing-3xl) sm:gap-(--res-desktop-spacing-2xl)',
+        'p-(--res-mobile-spacing-2xl) sm:p-(--res-desktop-spacing-2xl)',
       )}
     >
       <div class={'w-full flex justify-end'}>
@@ -91,10 +91,10 @@ export function LoginDrawer(props: Readonly<LoginDrawerProps>) {
       <h2
         id="login-drawer-title"
         class={clsx(
-          'text-[var(--text-colour-theme)]',
+          'text-(--text-colour-theme)',
           '[font-size:var(--res-mobile-font-size-heading-h4)] sm:[font-size:var(--res-desktop-font-size-heading-h4)] ',
-          '[font-weight:var(--font-font-weight-header-medium)]',
-          'sm:max-w-[300px]',
+          'font-(--font-font-weight-header-medium)',
+          'sm:max-w-75',
         )}
       >
         Log into your account
@@ -104,7 +104,7 @@ export function LoginDrawer(props: Readonly<LoginDrawerProps>) {
 
       <form
         class={
-          'space-y-[var(--res-mobile-spacing-2xl)] sm:space-y-[var(--res-desktop-spacing-xl)]'
+          'space-y-(--res-mobile-spacing-2xl) sm:space-y-(--res-desktop-spacing-xl)'
         }
       >
         <Dropdown
@@ -120,7 +120,7 @@ export function LoginDrawer(props: Readonly<LoginDrawerProps>) {
 
       <div
         class={
-          'w-full flex flex-col gap-[var(--res-mobile-spacing-md)] sm:gap-[var(--res-desktop-spacing-md)]'
+          'w-full flex flex-col gap-(--res-mobile-spacing-md) sm:gap-(--res-desktop-spacing-md)'
         }
       >
         <Button text="Continue" variant="secondary" fill />
