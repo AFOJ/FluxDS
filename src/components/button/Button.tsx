@@ -1,4 +1,5 @@
-import { getIcon, type IconKey } from '../icons'
+import { Icon } from '../icons/getIcon'
+import { type IconKey } from '../icons'
 import clsx from 'clsx'
 import type { ComponentPropsWithoutRef } from 'preact/compat'
 
@@ -10,13 +11,13 @@ interface ButtonProps extends Omit<
   'children' | 'type' | 'className'
 > {
   variant?: ButtonVariant
-  iconLeft?: IconKey | null
-  iconRight?: IconKey | null
+  iconLeft?: IconKey 
+  iconRight?: IconKey
   text: string
   fill?: boolean
 }
 
-export function Button(props: Readonly<ButtonProps>) {
+export default function Button(props: Readonly<ButtonProps>) {
   const {
     variant,
     iconLeft,
@@ -30,9 +31,6 @@ export function Button(props: Readonly<ButtonProps>) {
   const resolvedVariant =
     VARIANT_CLASSES[variant ?? 'primary'] ?? VARIANT_CLASSES.primary
 
-  const leftIconElement = getIcon(iconLeft)
-  const rightIconElement = getIcon(iconRight)
-
   return (
     <button
       class={clsx(
@@ -40,20 +38,20 @@ export function Button(props: Readonly<ButtonProps>) {
         resolvedVariant.hover,
         resolvedVariant.disabled,
         fill ? `w-full` : 'w-fit',
-        '[font-size:var(--res-mobile-font-size-action-md)] sm:[font-size:var(--res-desktop-font-size-action-md)] [font-weight:var(--font-font-weight-paragraph-medium)] font-[var(--font-font-family-paragraph)]',
+        '[font-size:var(--res-mobile-font-size-action-md)] sm:[font-size:var(--res-desktop-font-size-action-md)] font-(--font-font-weight-paragraph-medium)',
         'cursor-pointer disabled:cursor-not-allowed',
         'transition-colors duration-200 ease-in-out box-border',
-        'flex items-center justify-center gap-[var(--res-mobile-spacing-sm)]',
-        'px-[var(--res-mobile-spacing-lg)] py-[var(--res-mobile-spacing-md)]  rounded-[var(--border-radius-round)]',
-        'focus-visible:ring-2 focus-visible:ring-[var(--border-colour-primary)] focus-visible:outline-none',
+        'flex items-center justify-center gap-(--res-mobile-spacing-sm)',
+        'px-(--res-mobile-spacing-lg) py-(--res-mobile-spacing-md)  rounded-(--border-radius-round)',
+        'focus-visible:ring-2 focus-visible:ring-(--border-colour-primary) focus-visible:outline-none',
         className,
       )}
       {...rest}
     >
-      {leftIconElement && <span aria-hidden="true">{leftIconElement}</span>}
-      <span class={"text-left"}>{text}</span>
+      {iconLeft && <span aria-hidden="true"><Icon icon={iconLeft}/></span>}
+      <span class={'text-left'}>{text}</span>
 
-      {rightIconElement && <span aria-hidden="true">{rightIconElement}</span>}
+      {iconRight && <span aria-hidden="true"><Icon icon={iconRight}/></span>}
     </button>
   )
 }

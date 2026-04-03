@@ -1,4 +1,4 @@
-import { Dropdown } from './Dropdown'
+import Dropdown from './Dropdown'
 import type { Meta, StoryObj } from '@storybook/preact'
 
 const mockOptions = [
@@ -30,10 +30,7 @@ const meta: Meta<typeof Dropdown> = {
     icon: {
       control: 'select',
       options: [null, 'clock', 'user'],
-      description: 'Icon to display on the left side of the button',
-      table: {
-        type: { summary: 'string', defaultValue: 'null' },
-      },
+      description: 'Icon to display on the left side of the button'
     },
 
     value: {

@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import type { ComponentPropsWithoutRef } from 'preact/compat'
-import { getIcon, type IconKey } from '.'
+import { Icon, type IconKey } from '.'
 
 interface IconButtonProps extends Omit<
   ComponentPropsWithoutRef<'button'>,
@@ -15,7 +15,7 @@ interface IconButtonProps extends Omit<
 export function IconButton(props: IconButtonProps) {
   const { icon: iconKey, class: className, ariaLabel, ...rest } = props
 
-  const icon = getIcon(iconKey)
+  
   return (
     <button
       {...rest}
@@ -23,7 +23,7 @@ export function IconButton(props: IconButtonProps) {
       class={clsx('disabled:cursor-not-allowed', className)}
       aria-label={ariaLabel}
     >
-      <span aria-hidden="true">{icon}</span>
+      <span aria-hidden="true"><Icon icon={iconKey} /></span>
     </button>
   )
 }

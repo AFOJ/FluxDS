@@ -1,5 +1,5 @@
+import Card from './'
 import type { Meta, StoryObj } from '@storybook/preact'
-import { Card } from './Card'
 
 const meta: Meta<typeof Card> = {
   title: 'Components/Card',
