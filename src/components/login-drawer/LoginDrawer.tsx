@@ -1,10 +1,10 @@
+import { IconButton } from '../icons'
+import { useRef, useEffect } from 'preact/hooks'
 import Button from '../button/'
 import Card from '../card'
-import Dropdown from '../dropdown/Dropdown'
-import { IconButton } from '../icons'
-import { Input } from '../input/Input'
-import { useRef, useEffect } from 'preact/hooks'
 import clsx from 'clsx'
+import Dropdown from '../dropdown/Dropdown'
+import Input from '../input'
 
 interface LoginDrawerProps {
   onClose?: () => void

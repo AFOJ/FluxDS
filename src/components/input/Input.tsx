@@ -19,7 +19,7 @@ interface InputFieldProps extends Omit<
   fill?: boolean
 }
 
-export function Input(props: Readonly<InputFieldProps>) {
+export default function Input(props: Readonly<InputFieldProps>) {
   const {
     label,
     error,
@@ -74,22 +74,21 @@ export function Input(props: Readonly<InputFieldProps>) {
         class={clsx(
           'relative flex items-center space-x-2',
           'transition-all duration-200',
-          'ring-inset rounded-[var(--border-radius-md)]',
+          'ring-inset rounded-(--border-radius-md)',
           {
-            'ring-[length:0px]': disabled,
-            'ring-[length:var(--border-width-lg)]':
+            'ring-0': disabled,
+            'ring-(length:--border-width-lg)':
               isFocused || (hasValue && !disabled),
-            'ring-[length:var(--border-width-xs)]':
+            'ring-(length:--border-width-xs)':
               !isFocused && !hasValue && !disabled,
 
-            'ring-[var(--border-colour-error)]': error && !disabled,
-            'ring-[var(--border-colour-passive)]': !error && !disabled,
+            'ring-(--border-colour-error)': error && !disabled,
+            'ring-(--border-colour-passive)': !error && !disabled,
           },
           {
-            'bg-[var(--surface-colour-disabled-dark)] cursor-not-allowed':
-              disabled,
-            'bg-[var(--surface-colour-page)]': hasValue && !disabled,
-            'bg-[var(--surface-colour-secondary)]': !hasValue && !disabled,
+            'bg-(--surface-colour-disabled-dark) cursor-not-allowed': disabled,
+            'bg-(--surface-colour-page)': hasValue && !disabled,
+            'bg-(--surface-colour-secondary)': !hasValue && !disabled,
           },
         )}
       >
@@ -104,9 +103,9 @@ export function Input(props: Readonly<InputFieldProps>) {
             {
               // Below is purely for the background handling.
               'bg-white': isFloating && !disabled && !hasValue,
-              'bg-gradient-to-b from-white from-50% to-[var(--surface-colour-page)] to-50%':
+              'bg-linear-to-b from-white from-50% to-(--surface-colour-page) to-50%':
                 isFloating && !disabled && hasValue,
-              'bg-transparent text-[var(--text-colour-disabled)]':
+              'bg-transparent text-(--text-colour-disabled)':
                 isFloating && disabled,
             },
           )}
@@ -125,11 +124,11 @@ export function Input(props: Readonly<InputFieldProps>) {
           value={internalValue}
           class={clsx(
             'w-full outline-none p-3 disabled:cursor-not-allowed',
-            '[font-size:var(--res-mobile-font-size-body-md)] disabled:text-[var(--text-colour-disabled)]',
+            '[font-size:var(--res-mobile-font-size-body-md)] disabled:text-(--text-colour-disabled)',
             {
-              'text-[var(--text-colour-error)]': error && !disabled,
+              'text-(--text-colour-error)': error && !disabled,
             },
-            'bg-transparent text-[var(--text-colour-active)]',
+            'bg-transparent text-(--text-colour-active)',
           )}
           aria-invalid={error ? 'true' : undefined}
           aria-required={required ? 'true' : undefined}
@@ -139,10 +138,7 @@ export function Input(props: Readonly<InputFieldProps>) {
         {((success && !error) || clearable) && (
           <div class="flex items-center pr-3">
             {success && !error ? (
-              <span
-                aria-hidden="true"
-                class={'text-[var(--text-colour-success)]'}
-              >
+              <span aria-hidden="true" class={'text-(--text-colour-success)'}>
                 <TickIcon />
               </span>
             ) : (
@@ -153,10 +149,9 @@ export function Input(props: Readonly<InputFieldProps>) {
                   disabled={disabled}
                   ariaLabel="close-input-button"
                   class={clsx({
-                    'text-[var(--text-colour-disabled)]': disabled,
-                    'text-[var(--text-colour-error)]': error && !disabled,
-                    'text-[var(--text-colour-action-active)]':
-                      !disabled && !error,
+                    'text-(--text-colour-disabled)': disabled,
+                    'text-(--text-colour-error)': error && !disabled,
+                    'text-(--text-colour-action-active)': !disabled && !error,
                   })}
                 />
               )
@@ -167,7 +162,7 @@ export function Input(props: Readonly<InputFieldProps>) {
 
       {required && (
         <p class="[font-size:var(--res-mobile-font-size-body-xs)] text-(--text-colour-body)">
-          <span class="text-[var(--text-colour-warning)] ">*</span>required
+          <span class="text-(--text-colour-warning) ">*</span>required
         </p>
       )}
     </div>
