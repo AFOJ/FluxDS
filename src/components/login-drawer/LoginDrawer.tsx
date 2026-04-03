@@ -1,5 +1,5 @@
 import Button from '../button/'
-import { Card } from '../card/Card'
+import Card from '../card'
 import { Dropdown } from '../dropdown/Dropdown'
 import { IconButton } from '../icons'
 import { Input } from '../input/Input'
