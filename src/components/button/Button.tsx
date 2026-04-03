@@ -1,4 +1,4 @@
-import { Icon } from '../icons/getIcon'
+import { Icon } from '../icons'
 import { type IconKey } from '../icons'
 import clsx from 'clsx'
 import type { ComponentPropsWithoutRef } from 'preact/compat'
