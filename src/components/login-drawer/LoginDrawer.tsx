@@ -1,4 +1,4 @@
-import { Button } from '../button/Button'
+import Button from '../button/'
 import { Card } from '../card/Card'
 import { Dropdown } from '../dropdown/Dropdown'
 import { IconButton } from '../icons'

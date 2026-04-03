@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/preact'
-import { useState } from 'preact/hooks'
 import { LoginDrawer } from './LoginDrawer'
-import { Button } from '../button/Button'
+import { useState } from 'preact/hooks'
+import Button  from '../button'
+import type { Meta, StoryObj } from '@storybook/preact'
 
 type LoginDrawerProps = Parameters<typeof LoginDrawer>[0]
 const meta: Meta<LoginDrawerProps> = {

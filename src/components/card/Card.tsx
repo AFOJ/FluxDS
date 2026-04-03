@@ -1,5 +1,5 @@
+import Button from '../button'
 import clsx from 'clsx'
-import { Button } from '../button/Button'
 import type { ComponentProps } from 'preact'
 
 interface CardProps {
