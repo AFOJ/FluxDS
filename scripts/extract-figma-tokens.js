@@ -1,4 +1,5 @@
 import fs from 'fs'
+import { pxToRem } from './utils/index.js'
 
 const figmaTokens = JSON.parse(
   fs.readFileSync('./scripts/figma-tokens.json', 'utf8'),
@@ -100,16 +101,28 @@ function processTokenCategory(categoryObj, prefix, currentTheme, cssLines) {
         FONT_FAMILY_MAP[lookupKey] || `"${resolvedValue}", sans-serif`
     }
 
-    // Add 'px' suffix to numeric values (except for weights and line-heights)
-    const isNumeric =
-      token.type === 'number' ||
-      (!isNaN(resolvedValue) && typeof resolvedValue !== 'boolean')
-    const needsPixelSuffix =
-      !cssPropertyName.includes('weight') &&
-      !cssPropertyName.includes('line-height')
+    // Add 'px' or 'rem' suffix to numeric values (except for weights and line-heights)
+    const isNumeric = token.type === 'number' && Number.isFinite(resolvedValue)
 
-    if (isNumeric && needsPixelSuffix) {
-      resolvedValue = `${resolvedValue}px`
+    const NUMERIC_KEYS = Object.freeze(['weight', 'line-height'])
+    const isDimension = !NUMERIC_KEYS.some((key) =>
+      cssPropertyName.includes(key),
+    )
+
+    if (isNumeric && isDimension) {
+      const remConfig = {
+        KEYS_TO_REMAIN_PIXELS: Object.freeze(['border']),
+      }
+
+      if (
+        remConfig.KEYS_TO_REMAIN_PIXELS.some((key) =>
+          cssPropertyName.includes(key),
+        )
+      ) {
+        resolvedValue = `${resolvedValue}px`
+      } else {
+        resolvedValue = `${pxToRem(resolvedValue, remConfig)}rem`
+      }
     }
 
     const INDENTATION = '    '
