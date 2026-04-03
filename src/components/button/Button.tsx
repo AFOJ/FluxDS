@@ -1,4 +1,5 @@
-import { getIcon, type IconKey } from '../icons'
+import { Icon } from '../icons/getIcon'
+import { type IconKey } from '../icons'
 import clsx from 'clsx'
 import type { ComponentPropsWithoutRef } from 'preact/compat'
 
@@ -10,8 +11,8 @@ interface ButtonProps extends Omit<
   'children' | 'type' | 'className'
 > {
   variant?: ButtonVariant
-  iconLeft?: IconKey | null
-  iconRight?: IconKey | null
+  iconLeft?: IconKey 
+  iconRight?: IconKey
   text: string
   fill?: boolean
 }
@@ -30,9 +31,6 @@ export default function Button(props: Readonly<ButtonProps>) {
   const resolvedVariant =
     VARIANT_CLASSES[variant ?? 'primary'] ?? VARIANT_CLASSES.primary
 
-  const leftIconElement = getIcon(iconLeft)
-  const rightIconElement = getIcon(iconRight)
-
   return (
     <button
       class={clsx(
@@ -50,10 +48,10 @@ export default function Button(props: Readonly<ButtonProps>) {
       )}
       {...rest}
     >
-      {leftIconElement && <span aria-hidden="true">{leftIconElement}</span>}
+      {iconLeft && <span aria-hidden="true"><Icon icon={iconLeft}/></span>}
       <span class={'text-left'}>{text}</span>
 
-      {rightIconElement && <span aria-hidden="true">{rightIconElement}</span>}
+      {iconRight && <span aria-hidden="true"><Icon icon={iconRight}/></span>}
     </button>
   )
 }

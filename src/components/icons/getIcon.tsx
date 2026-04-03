@@ -6,6 +6,7 @@ import { TickIcon } from './TickIcon'
 import { UserIcon } from './UserIcon'
 import { ChevronDownIcon } from './ChevronDownIcon'
 import { ChevronUpIcon } from './ChevronUpIcon'
+import type { JSX } from 'preact/jsx-runtime'
 
 export type IconKey =
   | 'chevron-left'
@@ -17,31 +18,22 @@ export type IconKey =
   | 'clock'
   | 'tick'
 
-  /**
-   * Returns the corresponding icon component based on the provided icon name.
-   * @param iconName - The key representing the desired icon.
-   */
 
-  // iconName is value optional only so it isn't called like getIcon('') accidentally
-export function getIcon(iconName: IconKey | null | undefined) {
-  switch (iconName) {
-    case 'chevron-left':
-      return <ChevronLeftIcon />
-    case 'chevron-right':
-      return <ChevronRightIcon />
-    case 'user':
-      return <UserIcon />
-    case 'close':
-      return <CloseIcon />
-    case 'clock':
-      return <ClockIcon />
-    case 'tick':
-      return <TickIcon />
-    case 'chevron-down':
-      return <ChevronDownIcon />
-    case 'chevron-up':
-      return <ChevronUpIcon />
-    default:
-      return null
-  }
+const iconMap: Record<IconKey, () => JSX.Element> = {
+  'chevron-left': ChevronLeftIcon,
+  'chevron-right': ChevronRightIcon,
+  'chevron-down': ChevronDownIcon,
+  'chevron-up': ChevronUpIcon,
+  user: UserIcon,
+  close: CloseIcon,
+  clock: ClockIcon,
+  tick: TickIcon,
+}
+
+export function Icon(props: Readonly<{ icon: IconKey }>): JSX.Element {
+  const { icon } = props
+
+  const IconComponent = iconMap[icon]
+
+  return <IconComponent />
 }

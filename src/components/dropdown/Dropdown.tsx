@@ -1,4 +1,4 @@
-import { ChevronDownIcon, getIcon, type IconKey } from '../icons'
+import { ChevronDownIcon, Icon, type IconKey } from '../icons'
 import { useEffect, useRef, useState } from 'preact/hooks'
 import clsx from 'clsx'
 
@@ -93,8 +93,6 @@ export default function Dropdown(props: Readonly<DropdownProps>) {
     }
   }
 
-  const leftIconElement = getIcon(icon)
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -165,7 +163,7 @@ export default function Dropdown(props: Readonly<DropdownProps>) {
             {label}
           </label>
 
-          {leftIconElement && (
+          {icon && (
             <span
               aria-hidden="true"
               class={clsx({
@@ -173,7 +171,7 @@ export default function Dropdown(props: Readonly<DropdownProps>) {
                 'text-(--text-colour-action-active)': !disabled,
               })}
             >
-              {leftIconElement}
+              <Icon icon={icon} />
             </span>
           )}
 
